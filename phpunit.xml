@@ -1,0 +1,14 @@
+<phpunit bootstrap="vendor/autoload.php">
+
+    <testsuites>
+        <testsuite>
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <ini name="error_reporting" value="32767"/> <!-- E_ALL | E_STRICT -->
+        <ini name="date.timezone" value="Asia/Novosibirsk"/>
+    </php>
+
+</phpunit>
