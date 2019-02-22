@@ -2,7 +2,9 @@
 
 namespace TimeDependency\Clock;
 
-class LocalTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class LocalTest extends TestCase
 {
     public function testLocalClockShowLocalTime()
     {
@@ -13,4 +15,3 @@ class LocalTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($today, $clock->today());
     }
 }
- 
