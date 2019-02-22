@@ -1,14 +1,15 @@
 <?php
 namespace TimeDependency\Clock;
 
-interface ClockInterface {
+interface ClockInterface
+{
     /**
      * @return \DateTime
      */
-    public function now();
+    public function now(): \DateTime;
 
     /**
      * @return \DateTime
      */
-    public function today();
+    public function today(): \DateTime;
 }

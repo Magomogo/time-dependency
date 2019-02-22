@@ -2,7 +2,9 @@
 
 namespace TimeDependency;
 
-class TestDateTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class TestDateTest extends TestCase
 {
     public function testIsSteady()
     {

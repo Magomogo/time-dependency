@@ -3,7 +3,7 @@ namespace TimeDependency;
 
 class TestClock extends Clock\AbstractClock
 {
-    public function now()
+    public function now(): \DateTime
     {
         return new \DateTime('11.01.2009 12:30:05');
     }
@@ -13,54 +13,93 @@ class TestDate
 {
     /**
      * @return \DateTime
+     * @throws \Exception
      */
-    public static function tomorrow()
+    public static function tomorrow(): \DateTime
     {
         return self::today()->add(new \DateInterval('P1D'));
     }
 
-    public static function yesterday()
+    /**
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function yesterday(): \DateTime
     {
         return self::today()->sub(new \DateInterval('P1D'));
     }
 
-    public static function inDays($days)
+    /**
+     * @param int $days
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function inDays(int $days): \DateTime
     {
         return self::today()->add(new \DateInterval('P' . $days . 'D'));
     }
 
-    public static function aDaysAgo($days)
+    /**
+     * @param int $days
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function aDaysAgo(int $days): \DateTime
     {
         return self::today()->sub(new \DateInterval('P' . $days . 'D'));
     }
 
-    public static function aWeekAgo()
+    /**
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function aWeekAgo(): \DateTime
     {
         return self::aDaysAgo(7);
     }
 
-    public static function inAWeek()
+    /**
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function inAWeek(): \DateTime
     {
         return self::inDays(7);
     }
 
-    public static function aMonthAgo()
+    /**
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function aMonthAgo(): \DateTime
     {
         return self::today()->sub(new \DateInterval('P1M'));
     }
 
-    public static function inAMonth()
+    /**
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function inAMonth(): \DateTime
     {
         return self::today()->add(new \DateInterval('P1M'));
 
     }
 
-    public static function inAYear()
+    /**
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function inAYear(): \DateTime
     {
         return self::today()->add(new \DateInterval('P1Y'));
     }
 
-    public static function aYearAgo()
+    /**
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function aYearAgo(): \DateTime
     {
         return self::today()->sub(new \DateInterval('P1Y'));
     }
@@ -68,12 +107,12 @@ class TestDate
     /**
      * @return \DateTime
      */
-    public static function today()
+    public static function today(): \DateTime
     {
         return self::clock()->today();
     }
 
-    public static function clock()
+    public static function clock(): TestClock
     {
         return new TestClock;
     }

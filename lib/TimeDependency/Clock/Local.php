@@ -1,11 +1,13 @@
 <?php
 namespace TimeDependency\Clock;
 
-class Local extends AbstractClock {
+class Local extends AbstractClock
+{
     /**
      * @return \DateTime
      */
-    public function now() {
+    public function now(): \DateTime
+    {
         return new \DateTime;
     }
 }

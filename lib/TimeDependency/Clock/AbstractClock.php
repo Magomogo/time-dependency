@@ -9,7 +9,8 @@ abstract class AbstractClock implements ClockInterface
      *
      * @return \DateTime
      */
-    public function today() {
+    public function today(): \DateTime
+    {
         return $this->now()->setTime(0, 0, 0);
     }
 
